@@ -13,14 +13,14 @@ module.exports = async () => {
 		}));
 
 	// 生成路由
-	compile({ list }, './src/router.js', './template/router.js');
+	compile({ list }, './src/router.js', './template/router.js.hbs');
 
 	function compile(meta, filePath, templacePath) {
 		if (fs.existsSync(templacePath)) {
 			const content = fs.readFileSync(templacePath).toString();
 			const result = handlerbars.compile(content)(meta);
 			fs.writeFileSync(filePath, result);
-			log(`🚀${filePath}创建成功`);
+			log(`🚀${filePath} 创建成功`);
 		}
 	}
 };

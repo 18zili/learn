@@ -10,4 +10,9 @@ program
 	.description('init project')
 	.action(require('../lib/init'));
 
+program
+	.command('refresh')
+	.description('refresh router')
+	.action(require('../lib/refresh'));
+
 program.parse(process.argv);
