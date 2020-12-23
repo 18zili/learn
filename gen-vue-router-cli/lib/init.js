@@ -24,10 +24,10 @@ module.exports = async (name) => {
 	log(data);
 
 	log('🚀创建项目:' + name);
-	// await clone('github:su37josephxia/vue-template', name);
+	await clone('github:su37josephxia/vue-template', name);
 
 	log('🕙安装依赖...');
-	// await spawn('npm', ['install'], { cwd: `./${name}` });
+	await spawn('npm', ['install'], { cwd: `./${name}` });
 	log('👌安装完成!');
 
 	await spawn('npm', ['run', 'serve'], { cwd: `./${name}` });
